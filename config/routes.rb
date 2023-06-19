@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :pools, except: [:edit, :update, :index] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:update, :show, :edit, :destroy]
+  resources :bookings, only: [:show]
   namespace :owner do
-    resources :bookings, only: [:index, :update, :edit]
+    resources :bookings, only: [:index, :update, :edit, :destroy]
   end
 end
