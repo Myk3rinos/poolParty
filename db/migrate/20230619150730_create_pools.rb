@@ -6,6 +6,9 @@ class CreatePools < ActiveRecord::Migration[7.0]
       t.integer :max_people
       t.string :address
       t.integer :rating
+      t.string :url_photo
+      t.string :name
+      t.string :description
 
       t.timestamps
     end
