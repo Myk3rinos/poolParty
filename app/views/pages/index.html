@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/app/assets/stylesheets/pages/style.css">
+      <title>Home | PoolParty</title>
+   </head>
+   <body>
+      <header>
+         <nav>
+            <ul>
+               <li><a href="#">Accueil</a></li>
+               <li><a href="#">Explorer</a></li>
+               <li><a href="#">Contactez-Nous</a></li>
+            </ul>
+         </nav>
+         <h1>PoolParty</h1>
+         <p>Trouvez la piscine parfaite pour votre prochain événement</p>
+      </header>
+      <main>
+        <section class="listings">
+          <% @pool.each do |pool| %>
+            <article>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <p>Prix : <%= pool.price %> €</p>
+              <p>Évaluation : <%= pool.rating %></p>
+              <p>Capacité : <%= pool.peoples %> personnes</p>
+              <p>Ville : <%= pool.address %></p>
+              <a href="#">Voir plus</a>
+            </article>
+            <article>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <p>Prix : <%= pool.price %> €</p>
+              <p>Évaluation : <%= pool.rating %></p>
+              <p>Capacité : <%= pool.peoples %> personnes</p>
+              <p>Ville : <%= pool.address %></p>
+              <a href="#">Voir plus</a>
+            </article>
+            <article>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <p>Prix : <%= pool.price %> €</p>
+              <p>Évaluation : <%= pool.rating %></p>
+              <p>Capacité : <%= pool.peoples %> personnes</p>
+              <p>Ville : <%= pool.address %></p>
+              <a href="#">Voir plus</a>
+            </article>
+            <article>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <p>Prix : <%= pool.price %> €</p>
+              <p>Évaluation : <%= pool.rating %></p>
+              <p>Capacité : <%= pool.peoples %> personnes</p>
+              <p>Ville : <%= pool.address %></p>
+              <a href="#">Voir plus</a>
+            </article>
+            <article>
+               <img src="/app/assets/images/piscine5.jpg" alt="Image de la piscine 5">
+               <h2>Piscine 5</h2>
+               <p>Description de la piscine 5</p>
+               <p>Prix : 127€/journée</p>
+               <p>Évaluation : 5/5</p>
+               <p>Capacité : 8pers</p>
+               <p>Ville : Lyon</p>
+               <a href="#">Voir plus</a>
+            </article>
+            <article>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <p>Prix : <%= pool.price %> €</p>
+              <p>Évaluation : <%= pool.rating %></p>
+              <p>Capacité : <%= pool.peoples %> personnes</p>
+              <p>Ville : <%= pool.address %></p>
+              <a href="#">Voir plus</a>
+            </article>
+            <article>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <p>Prix : <%= pool.price %> €</p>
+              <p>Évaluation : <%= pool.rating %></p>
+              <p>Capacité : <%= pool.peoples %> personnes</p>
+              <p>Ville : <%= pool.address %></p>
+              <a href="#">Voir plus</a>
+            </article>
+            <article>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <p>Prix : <%= pool.price %> €</p>
+              <p>Évaluation : <%= pool.rating %></p>
+              <p>Capacité : <%= pool.peoples %> personnes</p>
+              <p>Ville : <%= pool.address %></p>
+              <a href="#">Voir plus</a>
+            </article>
+            <article>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <p>Prix : <%= pool.price %> €</p>
+              <p>Évaluation : <%= pool.rating %></p>
+              <p>Capacité : <%= pool.peoples %> personnes</p>
+              <p>Ville : <%= pool.address %></p>
+              <a href="#">Voir plus</a>
+            </article>
+            <% end %>
+         </section>
+      </main>
+      <footer>
+         <p>© 2023 | PoolParty. Tous droits réservés.</p>
+      </footer>
+   </body>
+</html>
