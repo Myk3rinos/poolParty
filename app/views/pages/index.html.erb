@@ -19,24 +19,25 @@
          <p>Trouvez la piscine parfaite pour votre prochain événement</p>
       </header>
       <main>
-         <section class="listings">
+        <section class="listings">
+          <% @pool.each do |pool| %>
             <article>
-               <img src="/app/assets/images/piscine1.jpg" alt="Image de la piscine 1">
-               <h2>Piscine 1</h2>
-               <p>Description de la piscine 1</p>
-               <a href="#">Voir plus</a>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <a href="#">Voir plus</a>
             </article>
             <article>
-               <img src="/app/assets/images/piscine2.jpg" alt="Image de la piscine 2">
-               <h2>Piscine 2</h2>
-               <p>Description de la piscine 2</p>
-               <a href="#">Voir plus</a>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <a href="#">Voir plus</a>
             </article>
             <article>
-               <img src="/app/assets/images/piscine3.jpg" alt="Image de la piscine 3">
-               <h2>Piscine 3</h2>
-               <p>Description de la piscine 3</p>
-               <a href="#">Voir plus</a>
+              <img src="<%= pool.image %>" alt="Image de <%= pool.name %>">
+              <h2><%= pool.name %></h2>
+              <p><%= pool.description %></p>
+              <a href="#">Voir plus</a>
             </article>
             <article>
                <img src="/app/assets/images/piscine4.jpg" alt="Image de la piscine 4">
@@ -74,6 +75,7 @@
                <p>Description de la piscine 9</p>
                <a href="#">Voir plus</a>
             </article>
+            <% end %>
          </section>
       </main>
       <footer>
