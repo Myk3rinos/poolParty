@@ -1,4 +1,3 @@
-// Specific CSS for your home-page
 body {
   font-family: Arial, sans-serif;
 }
@@ -25,27 +24,31 @@ nav ul li a {
   text-decoration: none;
 }
 
+nav ul li a:hover {
+  color: #0058A3;
+  background-color: white;
+}
+
 main {
-  text-align: center;
   padding: 20px;
 }
 
-main img {
-  width: 50%;
-  height: auto;
+.listings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-button {
-  background-color: #008CBA;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+.listings article {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 30%;
+  padding: 10px;
+}
+
+.listings article img {
+  width: 100%;
+  height: auto;
 }
 
 footer {
