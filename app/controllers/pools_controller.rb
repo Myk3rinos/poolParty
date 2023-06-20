@@ -1,6 +1,6 @@
 class PoolsController < ApplicationController
 
-  before_action :set_pool, only: [:show, :edit, :update, :destroy]
+  # before_action :set_pool, only: [:show, :edit, :update, :destroy]
   def index
     @pools = Pool.all
   end
@@ -10,7 +10,7 @@ class PoolsController < ApplicationController
   end
 
   def show
-    @pools = Pool.find(params[:id])
+    @pool = Pool.find(params[:id])
   end
 
   def edit
