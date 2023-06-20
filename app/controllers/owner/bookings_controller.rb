@@ -17,7 +17,7 @@ class Owner::BookingsController < ApplicationController
   end
 
   def destroy
-
+    @bookings.destroy
   end
 
   private
