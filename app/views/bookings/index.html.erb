@@ -1,6 +1,7 @@
-<h1>Bookings</h1>
-<ul>
-<% @pools.each do |pool|%>
-  <li><%= pool.name %></li>
+<h1>Book your favourite pool</h1>
+
+<% @bookings.each do |booking|%>
+  <img src="<%= booking.pool.url_photo %>" alt="Image de <%= booking.pool.name %>">
+  <p> Pool name: <strong><%= booking.pool.id %></strong></p>
+  <br>
 <% end %>
-</ul>

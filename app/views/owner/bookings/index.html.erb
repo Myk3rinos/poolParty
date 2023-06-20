@@ -1,5 +1,17 @@
 <h1>Bookings</h1>
 
+
 <% @bookings.each do |booking|%>
-  <%= render booking %>
+  <img src="<%= booking.pool.url_photo %>" alt="Image de <%= booking.pool.name %>">
+  <br>
+  <p>Booked from: <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></p>
+  <br>
+  <br>
+
 <% end %>
+ <%# <%= render booking %>
+
+    <%# t.date "start_date"
+    t.date "end_date"
+    t.integer "price"
+    t.integer "nombre_people" %>
