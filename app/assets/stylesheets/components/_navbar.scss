@@ -7,28 +7,46 @@
   flex-grow: 0;
 }
 
+.navbar-lewagon .navbar-brand {
+  font-size: 24px; /* Augmente la taille de la police pour "PoolParty" */
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
 
-// ----------------- Navbar -----------------
+/* ----------------- Navbar ----------------- */
 nav ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav p {
+  font-size: 30px;
 }
 
 nav ul li {
-  display: inline;
   margin: 0 15px;
+}
+
+nav ul li:first-child {
+  margin-right: auto;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
+  transition: color 0.4s ease-in-out;
 }
 
 nav ul li a:hover {
   color: #0058A3;
   background-color: white;
-  padding: 5px;
+}
+
+header{
+  margin-bottom: 20px;
 }
