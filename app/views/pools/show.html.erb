@@ -1,11 +1,19 @@
 <%= render "shared/navbar" %>
-
-<article class="article">
-  <img src="<%= @pool.url_photo %>" alt="Image de <%= @pool.name %>">
-  <h2><%= @pool.name %></h2>
-  <p><%= @pool.description %></p>
-  <p>Prix : <%= @pool.price %> €</p>
-  <p>Évaluation : <%= @pool.rating %></p>
-  <p>Capacité : <%= @pool.max_people %> personnes</p>
-  <p>Ville : <%= @pool.address %></p>
-</article>
+<div class="content">
+  <div class="card">
+    <article class="article">
+    <div class="image-container">
+      <img src="<%= @pool.url_photo %>" alt="Image of <%= @pool.name %>">
+    </div>
+    <div class="details-container">
+      <h2><%= @pool.name %></h2>
+      <p><%= @pool.description %></p>
+      <p>Prix : <%= @pool.price %> €</p>
+      <p>Évaluation : <%= @pool.rating %></p>
+      <p>Capacité : <%= @pool.max_people %> personnes</p>
+      <p>Ville : <%= @pool.address %></p>
+    </div>
+    </article>
+  </div>
+</div>
+<%= render "shared/footer" %>
