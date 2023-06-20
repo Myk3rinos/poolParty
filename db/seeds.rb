@@ -12,10 +12,10 @@ Pool.destroy_all
 Booking.destroy_all
 
 puts "----------- create User -----------"
-User.create(first_name: 'john', last_name: "pool", email: "john.pool@gmail.fr", phone_number: "343 123 4321")
-User.create(first_name: 'jack', last_name: "hash", email: "jack.hash@gmail.fr", phone_number: "923 245 3531")
-User.create(first_name: 'joe', last_name: "rails", email: "joe.rails@gmail.com", phone_number: "453 165 4311")
-User.create(first_name: 'jim', last_name: "ruby", email: "jim.ruby@gmail.com", phone_number: "313 543 1345")
+User.create(first_name: 'john', last_name: "pool", email: "john.pool@gmail.fr", password: "rerere", phone_number: "343 123 4321")
+User.create(first_name: 'jack', last_name: "hash", email: "jack.hash@gmail.fr", password: "rerere", phone_number: "923 245 3531")
+User.create(first_name: 'joe', last_name: "rails", email: "joe.rails@gmail.com", password: "rerere", phone_number: "453 165 4311")
+User.create(first_name: 'jim', last_name: "ruby", email: "jim.ruby@gmail.com", password: "rerere", phone_number: "313 543 1345")
 
 puts "----------- create Pool -----------"
 Pool.create(user_id: 1, name: 'nice pool', description: "ma petite piscine", max_people: 20, price: 200, rating: 4, address: "London", url_photo: "https://images.unsplash.com/photo-1543489822-c49534f3271f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2532&q=80")
