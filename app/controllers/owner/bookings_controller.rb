@@ -5,6 +5,9 @@ class Owner::BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def show
+  end
+
   def edit
 
   end
@@ -20,6 +23,6 @@ class Owner::BookingsController < ApplicationController
   private
 
   def set_bookings
-
+    @bookings = Booking.find(params[:id])
   end
 end

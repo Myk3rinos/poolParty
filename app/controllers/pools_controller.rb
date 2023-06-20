@@ -10,7 +10,6 @@ class PoolsController < ApplicationController
   end
 
   def show
-    @pools = Pool.find(params[:id])
   end
 
   def edit
@@ -23,7 +22,7 @@ class PoolsController < ApplicationController
   private
 
   def set_pools
-
+    @pools = Pool.find(params[:id])
   end
 
 end
