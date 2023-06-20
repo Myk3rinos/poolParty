@@ -1,0 +1,22 @@
+<%# <%= render "shared/navbar", list: @list, bookmark: @bookmark %>
+<%= render "shared/navbar" %>
+<h1>PoolParty</h1>
+<p>Trouvez la piscine parfaite pour votre prochain événement</p>
+
+
+<section class="listings">
+
+  <% @pools.each do |pool| %>
+    <article>
+      <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>">
+      <h2><%= pool.name %></h2>
+      <p><%= pool.description %></p>
+      <p>Prix : <%= pool.price %> €</p>
+      <p>Évaluation : <%= pool.rating %></p>
+      <p>Capacité : <%= pool.max_people %> personnes</p>
+      <p>Ville : <%= pool.address %></p>
+    </article>
+  <% end %>
+</section>
+
+<%= render "shared/footer" %>
