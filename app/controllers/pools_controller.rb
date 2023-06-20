@@ -1,5 +1,6 @@
 class PoolsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_pool, only: %i[ show ]
   # before_action :set_pool, only: [:show, :edit, :update, :destroy]
 

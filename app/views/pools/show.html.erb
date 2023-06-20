@@ -13,6 +13,11 @@
       <p>Capacité : <%= @pool.max_people %> personnes</p>
       <p>Ville : <%= @pool.address %></p>
     </div>
+    <button>Rent</button>
+    <%# <%= render "form", pool: @pool %> %>
+    <div data-controller="five-stars" data-five-stars-target="stars">
+
+    </div>
     </article>
   </div>
 </div>
