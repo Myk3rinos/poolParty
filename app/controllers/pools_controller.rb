@@ -13,6 +13,7 @@ class PoolsController < ApplicationController
   end
 
   def edit
+    @pool.save
   end
 
   def update
