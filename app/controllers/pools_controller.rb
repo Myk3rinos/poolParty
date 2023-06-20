@@ -1,7 +1,8 @@
 class PoolsController < ApplicationController
 
-  before_action :set_pool, only: [:show]
+  before_action :set_pool, only: %i[ show ]
   # before_action :set_pool, only: [:show, :edit, :update, :destroy]
+
   def index
     @pools = Pool.all
   end
@@ -11,6 +12,7 @@ class PoolsController < ApplicationController
   end
 
   def show
+    # @pool = Pool.find(params[:id])
   end
 
   def edit
@@ -22,11 +24,12 @@ class PoolsController < ApplicationController
 
   private
 
-  def set_pools
+  def set_pool
     @pool = Pool.find(params[:id])
   end
 
   def pool_params
     params.require(:pool).permit(:name)
   end
+
 end
