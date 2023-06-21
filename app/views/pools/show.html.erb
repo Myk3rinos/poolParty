@@ -19,6 +19,18 @@
 
     </div>
     </article>
+
+
+    <%= simple_form_for @pool do |f| %>
+      <%= f.error_notification %>
+      <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %> %>
+      <%= f.input :name%>
+      <%= f.input :address%>
+      <%# <%= f.input :opening_date, input_html: { date: { controller: "datepickr" } } %> %>
+      <div class="form">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>
