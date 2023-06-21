@@ -16,10 +16,6 @@ class BookingsController < ApplicationController
     @pool = Pool.find(params[:pool_id])
     @booking.pool = @pool
     @booking.save
-    # raise
-    # @pool = Booking.new(booking_params)
-    # @pool.save
-    # redirect_to restaurant_path(@restaurant)
   end
 
   def update
