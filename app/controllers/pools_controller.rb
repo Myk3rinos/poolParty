@@ -39,7 +39,7 @@ class PoolsController < ApplicationController
 
   def pool_params
     # params.require(:pool).permit(:name)
-    params.require(:pool).permit(:name, :description, :max_people, :address, :url_photo, :price)
+    params.require(:pool).permit(:name, :description, :max_people, :address, :url_photo)
   end
 
 end

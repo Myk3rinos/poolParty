@@ -3,11 +3,11 @@
 
 <div class="search-container">
 <%= form_tag "/index", method: "GET", class: "search-form" do %>
-  <%= label_tag :search_by_breed %>
-  <%= text_field_tag :search_by_location, params[:search_by_breed] %>
-  <%= label_tag :search_by_color %>
-  <%= text_field_tag :search_by_date, params[:search_by_color] %>
-  <%= submit_tag "Search" %>
+  <%= label_tag :chercher_par_ville %>
+  <%= text_field_tag :chercher_par_ville, params[:chercher_par_ville] %>
+  <%= label_tag :chercher_par_date %>
+  <%= text_field_tag :chercher_par_date, params[:chercher_par_date] %>
+  <%= submit_tag "Rechercher" %>
 <% end %>
 </div>
 
