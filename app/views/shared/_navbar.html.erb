@@ -1,13 +1,18 @@
 <header>
   <nav>
-        <%= link_to image_tag("logo.png", class:"logo"), root_path %>
+    <%= link_to image_tag("logo.png", class:"logo"), root_path %>
     <ul>
-      <li><%= link_to 'Connexion', bookings_path(current_user), class: 'button button-center' %></li>
       <li><%= link_to 'Accueil', root_path %></li>
       <li><a href="#">Explorer</a></li>
       <li><%= link_to 'Booking', bookings_path(current_user), class: 'button button-center' %></li>
       <li><a href="#">Contactez-Nous</a></li>
-<!--      <%# <li><%= link_to 'Dashboard', dashboard_path(current_user), class: 'button button-center' %></li>%> -->
+
+      <% if user_signed_in? %>
+        <li><%= image_tag("user_profile_image.png", class: "circle") %></li>
+      <% else %>
+        <li><%= link_to 'Connexion', new_user_session_path, class: 'button button-center' %></li>
+      <% end %>
+
       <li><%= button_to(
         "Log Out",
         destroy_user_session_path,
