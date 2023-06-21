@@ -1,13 +1,15 @@
 <%# <%= render "shared/navbar", list: @list, bookmark: @bookmark %>
 <%= render "shared/navbar" %>
 
-<%= form_tag "/index", method: "GET" do %>
+<div class="search-container">
+<%= form_tag "/index", method: "GET", class: "search-form" do %>
   <%= label_tag :search_by_breed %>
   <%= text_field_tag :search_by_location, params[:search_by_breed] %>
   <%= label_tag :search_by_color %>
   <%= text_field_tag :search_by_date, params[:search_by_color] %>
   <%= submit_tag "Search" %>
 <% end %>
+</div>
 
 <section class="listings">
   <% @pools.each do |pool| %>
@@ -27,9 +29,6 @@
 
       <% pool.rating.times do %>
         <i class="fa-solid fa-star" style="color: #e5c006;"></i>
-      <% end %>
-      <% (5 - pool.rating).times do %>
-        <i class="fa-regular fa-star" style="color: #e5c006;"></i>
       <% end %>
 
 
