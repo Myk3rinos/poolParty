@@ -1,56 +1,41 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand {
-  font-size: 24px; /* Augmente la taille de la police pour "PoolParty" */
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-/* ----------------- Navbar ----------------- */
-nav ul {
-  list-style-type: none;
-  padding: 0;
+nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
 
-nav p {
-  font-size: 30px;
-}
+  .logo {
+    width: 200px;
+  }
 
-nav ul li {
-  margin: 0 15px;
-}
+  ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
 
-nav ul li:first-child {
-  margin-right: auto;
-}
+    li {
+      margin: 0 15px;
+      margin-left: 10px;
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.4s ease-in-out;
-}
+      a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.4s ease-in-out;
 
-nav ul li a:hover {
-  color: #0058A3;
-  background-color: white;
-}
+        &:hover {
+          color: #0058A3;
+          background-color: white;
+        }
+      }
+    }
+  }
 
-header{
-  // margin-bottom: 20px;
+  p {
+    font-size: 30px;
+  }
 }
-
-.logo {
-  width: 80px;
+.circle {
+  border-radius: 50%;
+  width: 50px;  /* adjust as needed */
+  height: 50px; /* adjust as needed */
 }
