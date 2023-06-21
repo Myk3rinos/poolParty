@@ -12,10 +12,10 @@
       <div class="card-body">
         <%# <h5 class="card-title">Card title</h5> %>
         <h5 class="card-title"><strong><%= booking.pool.name %></strong></h5>
-        <p class="card-text">Description: <%= booking.pool.description %></p>
-        <p class="card-text">Max capacity: <%= booking.pool.max_people %></p>
-        <p class="card-text">Price: <%= booking.pool.price %></p>
-        <p class="card-text">Address: <%= booking.pool.address %></p>
+        <p class="card-text"> <small class ="text-muted">Description: <%= booking.pool.description %></small></p>
+        <p class="card-text"><small class ="text-muted">Max capacity: <%= booking.pool.max_people %></small></p>
+        <p class="card-text"><small class ="text-muted">Price: <%= booking.pool.price %></small></p>
+        <p class="card-text"><small class ="text-muted">Address: <%= booking.pool.address %></small></p>
         <%# <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> %>
       </div>
     </div>
