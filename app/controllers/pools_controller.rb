@@ -28,7 +28,7 @@ class PoolsController < ApplicationController
     @pool = Pool.new(pool_params)
     @pool.user = current_user
     @pool.save
-    redirect_to pools_path
+    redirect_to root_path
   end
 
   private
@@ -39,8 +39,7 @@ class PoolsController < ApplicationController
 
   def pool_params
     # params.require(:pool).permit(:name)
-    params.require(:pool).permit(:name, :description, :max_people, :address, :url_photo)
-
+    params.require(:pool).permit(:name, :description, :max_people, :address, :url_photo, :price)
   end
 
 end
