@@ -21,7 +21,7 @@
 
     <div data-controller="datepickr" data-datepickr-target="date">
 
-    <%= simple_form_for @booking do |f| %>
+    <%= simple_form_for [@pool, @booking] do |f| %>
       <%= f.error_notification %>
       <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
       <%= f.input :nombre_people%>

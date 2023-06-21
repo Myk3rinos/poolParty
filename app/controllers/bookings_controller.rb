@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_bookings, only: [:create]
+  # before_action :set_bookings, only: [:create]
 
   def index
     @bookings = Booking.where(user_id: current_user)
@@ -11,8 +11,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @pool = Booking.new(booking_params)
-    @pool.save
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @pool = Pool.find(params[:pool_id])
+    @booking.pool = @pool
+    @booking.save
+    # raise
+    # @pool = Booking.new(booking_params)
+    # @pool.save
     # redirect_to restaurant_path(@restaurant)
   end
 
