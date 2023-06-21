@@ -2,10 +2,27 @@
 <h1>Book your favourite pool</h1>
 
 <% @bookings.each do |booking|%>
-  <img src="<%= booking.pool.url_photo %>" alt="Image de <%= booking.pool.name %>">
-  <p><strong><%= booking.pool.name %></strong></p>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <%# <img src="..." class="card-img" alt="..."> %>
+      <img src="<%= booking.pool.url_photo %>" class="card-img" alt="Image de <%= booking.pool.name %>">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <%# <h5 class="card-title">Card title</h5> %>
+        <h5 class="card-title"><strong><%= booking.pool.name %></strong></h5>
+        <p class="card-text">Description: <%= booking.pool.description %></p>
+        <p class="card-text">Max capacity: <%= booking.pool.max_people %></p>
+        <p class="card-text">Price: <%= booking.pool.price %></p>
+        <p class="card-text">Address: <%= booking.pool.address %></p>
+        <%# <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> %>
+      </div>
+    </div>
+    <%= button_to "cancel booking", booking_path(booking), method: :delete %>
+  </div>
+</div>
   <%# <br> %>
-  <%= button_to "cancel booking", booking_path(booking), method: :delete %>
 <% end %>
 
 <%= render "shared/footer" %>
