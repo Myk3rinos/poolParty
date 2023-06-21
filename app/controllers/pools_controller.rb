@@ -13,7 +13,9 @@ class PoolsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(1)
+    # @booking = Booking.find(1)
+    @bookings = Booking.where(user_id: current_user)
+
   end
 
   def edit
