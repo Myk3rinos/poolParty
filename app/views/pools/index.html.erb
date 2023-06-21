@@ -27,8 +27,10 @@
       <p><%= pool.rating %>/5</p>
 
 
-      <% pool.rating.times do %>
-        <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+      <% if (pool.rating != nil)  %>
+        <% pool.rating.times do %>
+          <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+        <% end %>
       <% end %>
 
 
