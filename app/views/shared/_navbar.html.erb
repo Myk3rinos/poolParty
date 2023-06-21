@@ -4,10 +4,11 @@
     <ul>
       <li><%= link_to 'Accueil', root_path %></li>
       <li><a href="#">Explorer</a></li>
-      <li><%= link_to 'Booking', bookings_path(current_user), class: 'button button-center' %></li>
       <li><a href="#">Contactez-Nous</a></li>
 
       <% if user_signed_in? %>
+        <li><%= link_to 'Booking', bookings_path(current_user), class: 'button button-center' %></li>
+        <li><%= link_to 'Rental', poolrental_index_path(current_user), class: 'button button-center' %></li>
         <li><%= image_tag("user_profile_image.jpg", class: "circle") %></li>
         <li><%= button_to(
           "Log Out",

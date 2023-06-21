@@ -3,8 +3,9 @@
 
 <% @bookings.each do |booking|%>
   <img src="<%= booking.pool.url_photo %>" alt="Image de <%= booking.pool.name %>">
-  <p> Pool name: <strong><%= booking.pool.id %></strong></p>
-  <br>
+  <p><strong><%= booking.pool.name %></strong></p>
+  <%# <br> %>
+  <%= button_to "cancel booking", booking_path(booking), method: :delete %>
 <% end %>
 
 <%= render "shared/footer" %>
