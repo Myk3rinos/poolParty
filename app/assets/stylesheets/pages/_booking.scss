@@ -1,0 +1,48 @@
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: auto;
+  flex-direction: row; /* Nouveau */
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: calc(33.333% - 20px);
+}
+
+.card img {
+  max-width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #0058A3;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+}
