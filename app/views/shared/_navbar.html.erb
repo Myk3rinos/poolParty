@@ -8,7 +8,7 @@
       <li><a href="#">Contactez-Nous</a></li>
 
       <% if user_signed_in? %>
-        <li><%= image_tag("user_profile_image.png", class: "circle") %></li>
+        <li><%= image_tag("user_profile_image.jpg", class: "circle") %></li>
       <% else %>
         <li><%= link_to 'Connexion', new_user_session_path, class: 'button button-center' %></li>
       <% end %>
