@@ -7,8 +7,8 @@
       <li><a href="#">Contactez-Nous</a></li>
 
       <% if user_signed_in? %>
-        <li><%= link_to 'Booking', bookings_path(current_user), class: 'button button-center' %></li>
-        <li><%= link_to 'Rental', poolrental_index_path(current_user), class: 'button button-center' %></li>
+        <li><%= link_to 'Booking', bookings_path, class: 'button button-center' %></li>
+        <li><%= link_to 'Rental', new_pool_path, class: 'button button-center' %></li>
         <li><%= image_tag("user_profile_image.jpg", class: "circle") %></li>
         <li><%= button_to(
           "Log Out",
