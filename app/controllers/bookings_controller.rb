@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @pool = Pool.find(params[:pool_id])
     @booking.pool = @pool
     @booking.save
+    redirect_to root_path
 
     # respond_to do |format|
     #   if @booking.save
