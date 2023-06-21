@@ -24,6 +24,13 @@ class PoolsController < ApplicationController
 
   end
 
+  def create
+    @pool = Pool.new(pool_params)
+    @pool.user = current_user
+    @pool.save
+    redirect_to pools_path
+  end
+
   private
 
   def set_pool
@@ -31,7 +38,9 @@ class PoolsController < ApplicationController
   end
 
   def pool_params
-    params.require(:pool).permit(:name)
+    # params.require(:pool).permit(:name)
+    params.require(:pool).permit(:name, :description, :max_people, :address, :url_photo)
+
   end
 
 end
