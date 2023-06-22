@@ -19,21 +19,26 @@
 
     </article>
 
-    <div data-controller="datepickr" data-datepickr-target="date">
+
 
     <%= simple_form_for [@pool, @booking] do |f| %>
       <%= f.error_notification %>
       <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
       <%= f.input :nombre_people%>
 
-      <%= f.input :start_date, input_html: { date: { controller: "datepickr" } } %>
-      <%= f.input :end_date, input_html: { date: { controller: "datepickr" } } %>
+      <div data-controller="datepickr" data-datepickr-target="date">
+        <%= f.input :start_date, as: :string, input_html: { date: { controller: "datepickr" } } %>
+      </div>
+      <div data-controller="datepickr" data-datepickr-target="date">
+        <%= f.input :end_date, as: :string, input_html: { date: { controller: "datepickr" } } %>
+      </div>
+
       <div class="form">
         <%= f.button :submit %>
       </div>
     <% end %>
 
-    </div>
+
   </div>
 </div>
 <%= render "shared/footer" %>

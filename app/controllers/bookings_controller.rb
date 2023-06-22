@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @pool = Pool.find(params[:pool_id])
     @booking.pool = @pool
     @booking.save
-    redirect_to root_path
+    redirect_to bookings_path
 
     # respond_to do |format|
     #   if @booking.save
@@ -37,8 +37,9 @@ class BookingsController < ApplicationController
     # raise
     # @booking.destroy
     Booking.find(params[:id]).destroy
-    # redirect_to bookings_path
-    redirect_to root_path
+    redirect_to bookings_path
+    # redirect_to bookings
+
 
     # respond_to do |format|
     #   format.html { redirect_to booking_url, notice: "Booking was successfully destroyed." }

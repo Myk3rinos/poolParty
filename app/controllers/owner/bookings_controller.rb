@@ -13,6 +13,7 @@ class Owner::BookingsController < ApplicationController
 
   def destroy
     @bookings.destroy
+    redirect_to bookings_path
   end
 
   private
