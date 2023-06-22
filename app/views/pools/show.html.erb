@@ -1,39 +1,27 @@
 <%= render "shared/navbar" %>
-<div class="content">
-  <div class="card">
-    <article class="article">
-    <div class="image-container">
-      <img src="<%= @pool.url_photo %>" alt="Image of <%= @pool.name %>">
-    </div>
-    <div class="details-container">
-      <h2><%= @pool.name %></h2>
-      <p><%= @pool.description %></p>
-      <p>Prix : <%= @pool.price %> €</p>
-      <p>Évaluation : <%= @pool.rating %></p>
-      <p>Capacité : <%= @pool.max_people %> personnes</p>
-      <p>Ville : <%= @pool.address %></p>
-    </div>
-    <%# <button>Rent</button> %>
-
-    <%# <%= render "form", pool: @pool %>
-
-    </article>
-
+<div class="container shadow p-3 m-5 bg-white ">
+<div class = "row" >
+  <div class = "col">
+    <img src="<%= @pool.url_photo %>" alt="Image of <%= @pool.name %>" width = "800px">
+  </div>
+  <div class = "col shadow pr-3">
     <div data-controller="datepickr" data-datepickr-target="date">
+      <%= simple_form_for [@pool, @booking] do |f| %>
+        <%= f.error_notification %>
+        <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
+        <%= f.input :nombre_people%>
 
-    <%= simple_form_for [@pool, @booking] do |f| %>
-      <%= f.error_notification %>
-      <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
-      <%= f.input :nombre_people%>
-
-      <%= f.input :start_date, input_html: { date: { controller: "datepickr" } } %>
-      <%= f.input :end_date, input_html: { date: { controller: "datepickr" } } %>
-      <div class="form">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
-
+        <%= f.input :start_date, input_html: { date: { controller: "datepickr" } } %>
+        <%= f.input :end_date, input_html: { date: { controller: "datepickr" } } %>
+        <div class="form">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
     </div>
   </div>
+  </div>
 </div>
+
+
+
 <%= render "shared/footer" %>
