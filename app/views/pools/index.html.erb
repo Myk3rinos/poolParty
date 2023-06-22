@@ -15,7 +15,6 @@
 
 <section class="listings">
   <% @pools.each do |pool| %>
-
     <%# <%= pool_path(pool), class: 'button button-center' do %>
     <%= link_to pool_path(pool), class: 'article-index' do %>
 
@@ -26,18 +25,19 @@
       <h2><%= pool.price %> €</h2>
       </div>
       <div class="left-right">
-      <p><%= pool.rating %>/5</p>
+    <% if (pool.rating != nil)  %>
+        <div class="stars">
+            <% pool.rating.times do %>
+                <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+            <% end %>
+        </div>
+    <% end %>
+    <div class="users">
+    <p><%= pool.max_people %><i class="fa-solid fa-user user-icon"></i></p>
+</div>
 
+</div>
 
-      <% if (pool.rating != nil)  %>
-        <% pool.rating.times do %>
-          <i class="fa-solid fa-star" style="color: #e5c006;"></i>
-        <% end %>
-      <% end %>
-
-
-      <p><%= pool.max_people %><i class="fa-solid fa-user"></i></i></p>
-      </div>
         <p>
           <i class="fa-solid fa-city"></i>
           <span class="separator"></span>

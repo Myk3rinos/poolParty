@@ -17,39 +17,25 @@ nav {
       margin: 0 15px;
       margin-left: 10px;
       position: relative;
-      // background-color: aqua;
-      .notif-location {
-        background-color: red;
-        color: white;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        display: flex;
-        text-align: center;
-        justify-content:center;
-        margin: auto;
-        position: absolute;
-        right: -10px;
-        top: -10px;
-      }
 
       a {
         color: white;
         text-decoration: none;
-        transition: color 0.4s ease-in-out;
+        transition: color 0.2s ease-in-out;
+        padding: 5px;
 
         &:hover {
           color: #0058A3;
           background-color: white;
+          padding: 5px;
+          border-radius: 5px;
         }
       }
     }
 
     .menuprofil {
       position: absolute;
-      width: 100px;
-      height: 100px;
-      background-color: red;
+      background-color: #0a58ca;
       right: 0px;
       top: 80px;
     }
@@ -61,6 +47,45 @@ nav {
 }
 .circle {
   border-radius: 50%;
-  width: 50px;  /* adjust as needed */
-  height: 50px; /* adjust as needed */
+  width: 50px;
+  height: 50px;
+}
+
+.menuprofil a {
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #fbfbfb;
+  padding: 5px;
+}
+
+.menuprofil a:hover {
+  background-color: #fbfbfb;
+  color: #0058A3;
+}
+
+.avatar-container {
+  position: relative;
+}
+
+.notif-location {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.3em 0.6em;
+  font-size: 0.8em;
+}
+
+.logout {
+  background-color: #0058A3;
+  color: rgb(171, 1, 1);
+  text-decoration: none;
+}
+
+.btn-danger a:hover {
+  background-color: #fbfbfb;
+  color: #0058A3;
 }

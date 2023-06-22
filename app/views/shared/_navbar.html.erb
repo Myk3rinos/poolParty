@@ -5,26 +5,20 @@
       <li><%= link_to 'Accueil', root_path %></li>
       <li><a href="#">Explorer</a></li>
       <li><a href="#">Contactez-Nous</a></li>
-
+      <li><%= link_to 'Mettre en location', new_pool_path, class: 'button button-center' %></li>
       <% if user_signed_in? %>
-        <li><%= link_to 'Reservation', bookings_path, class: 'button button-center' %></li>
-        <li><%= link_to 'Mettre en location', new_pool_path, class: 'button button-center' %></li>
-        <li><%= link_to 'Mes locations', owner_bookings_path, class: 'button button-center' %>
-          <div class="notif-location"><%= Booking.all.length %></div>
-        </li>
-        <li><%= image_tag("user_profile_image.jpg", class: "circle") %></li>
+        <li class="avatar-container">
+          <div data-controller="menutoggle">
+            <%= image_tag("user_profile_image.jpg", class: "circle", data: { action: "click->menutoggle#toggle" }) %>
+            <div class="notif-location"><%= Booking.all.length %></div>
+            <div data-menutoggle-target="menu" class="d-none menuprofil">
+              <div><%= link_to 'Mes réservations', bookings_path, class: '' %></div>
+              <div><%= link_to 'Mes locations', owner_bookings_path, class: '' %></div>
+              <%= button_to('Déconnexion', destroy_user_session_path, method: :delete, class: 'btn-danger') %>
 
-        <div data-controller="menutoggle">
-          <button type="button" class="btn btn-primary" data-action="click->menutoggle#toggle">menu</button>
-          <div data-menutoggle-target="menu" class="d-none menuprofil">
-            <div><%= link_to 'Mes reservations', bookings_path, class: 'button button-center' %></div>
-            <div><%= link_to 'Mes locations', owner_bookings_path, class: 'button button-center' %>
-              <div class="notif-location"><%= Booking.all.length %></div>
             </div>
-            <div><%= button_to( "Deconnexion", destroy_user_session_path, method: :delete ) %></div>
           </div>
-        </div>
-
+        </li>
       <% else %>
         <li><%= link_to 'Connexion', new_user_session_path, class: 'button button-center' %></li>
       <% end %>
