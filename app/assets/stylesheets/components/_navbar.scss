@@ -16,6 +16,22 @@ nav {
     li {
       margin: 0 15px;
       margin-left: 10px;
+      position: relative;
+      background-color: aqua;
+      .notif-location {
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        text-align: center;
+        justify-content:center;
+        margin: auto;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+      }
 
       a {
         color: white;

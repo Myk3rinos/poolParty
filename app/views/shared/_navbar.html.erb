@@ -9,6 +9,9 @@
       <% if user_signed_in? %>
         <li><%= link_to 'Reservation', bookings_path, class: 'button button-center' %></li>
         <li><%= link_to 'Mettre en location', new_pool_path, class: 'button button-center' %></li>
+        <li><%= link_to 'Mes locations', owner_bookings_path, class: 'button button-center' %>
+          <div class="notif-location"><%= Booking.all.length %></div>
+        </li>
         <li><%= image_tag("user_profile_image.jpg", class: "circle") %></li>
         <li><%= button_to(
           "Deconnexion",
