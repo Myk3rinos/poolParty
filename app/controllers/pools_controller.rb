@@ -5,10 +5,7 @@ class PoolsController < ApplicationController
   # before_action :set_pool, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @pools = Pool.all
-
     if params[:query].present?
-      # @pools = Pool.where(address: params[:query])
       @pools = Pool.where('address ILIKE ?', "%#{params[:query]}%")
     else
       @pools = Pool.all
@@ -21,7 +18,6 @@ class PoolsController < ApplicationController
 
   def show
     @booking = Booking.new
-    # @booking = Booking.where(user_id: current_user)
   end
 
   def edit
@@ -38,6 +34,12 @@ class PoolsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @pool = Pool.find(params[:id])
+    @pool.destroy
+    redirect_to owner_bookings_path
+  end
+
   private
 
   def set_pool
@@ -45,7 +47,6 @@ class PoolsController < ApplicationController
   end
 
   def pool_params
-    # params.require(:pool).permit(:name)
     params.require(:pool).permit(:name, :description, :max_people, :address, :url_photo)
   end
 
