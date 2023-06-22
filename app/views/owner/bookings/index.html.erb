@@ -1,7 +1,3 @@
-<%= render "shared/navbar" %>
-
-
-
 <% @pools.each do |pool|%>
   <% pool.bookings.each do |poolBooking| %>
     <p><%= pool.name %></p>

@@ -2,19 +2,18 @@
   <nav>
     <%= link_to image_tag("logo.png", class:"logo"), root_path %>
     <ul>
-      <li><%= link_to 'Accueil', root_path %></li>
-      <li><a href="#">Explorer</a></li>
-      <li><a href="#">Contactez-Nous</a></li>
-      <li><%= link_to 'Mettre en location', new_pool_path, class: 'button button-center' %></li>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><a href="#">Contact us</a></li>
+      <li><%= link_to 'Rent your Pool', new_pool_path, class: 'button button-center' %></li>
       <% if user_signed_in? %>
         <li class="avatar-container">
           <div data-controller="menutoggle">
             <%= image_tag("user_profile_image.jpg", class: "circle", data: { action: "click->menutoggle#toggle" }) %>
             <div class="notif-location"><%= Booking.all.length %></div>
             <div data-menutoggle-target="menu" class="d-none menuprofil">
-              <div><%= link_to 'Mes réservations', bookings_path, class: '' %></div>
-              <div><%= link_to 'Mes locations', owner_bookings_path, class: '' %></div>
-              <%= button_to('Déconnexion', destroy_user_session_path, method: :delete, class: 'btn-danger') %>
+              <div><%= link_to 'My reservations', bookings_path, class: '' %></div>
+              <div><%= link_to 'My rentals', owner_bookings_path, class: '' %></div>
+              <%= button_to('Logout', destroy_user_session_path, method: :delete, class: 'btn-danger') %>
 
             </div>
           </div>
