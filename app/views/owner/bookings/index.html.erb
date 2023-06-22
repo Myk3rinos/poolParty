@@ -2,6 +2,10 @@
 
 
 <% @bookings.each do |booking|%>
+
+  <%= button_to "validated booking", validate_booking_path(booking), method: :patch %>
+  <%= button_to "reject booking", reject_booking_path(booking), method: :patch %>
+  <p><%= booking.validation %></p>
   <img src="<%= booking.pool.url_photo %>" alt="Image de <%= booking.pool.name %>">
   <br>
   <p>Booked from: <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></p>

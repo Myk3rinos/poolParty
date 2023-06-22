@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_20_142908) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_22_093345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_142908) do
     t.date "end_date"
     t.integer "price"
     t.integer "nombre_people"
+    t.boolean "validation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pool_id"], name: "index_bookings_on_pool_id"
