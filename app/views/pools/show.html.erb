@@ -11,9 +11,13 @@
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
         <%= f.input :nombre_people%>
 
-        <%= f.input :start_date, input_html: { date: { controller: "datepickr" } } %>
-        <%= f.input :end_date, input_html: { date: { controller: "datepickr" } } %>
-        <div class="form">
+        <div data-controller="datepickr" data-datepickr-target="date">
+        <%= f.input :start_date, as: :string, input_html: { date: { controller: "datepickr" } } %>
+      </div>
+      <div data-controller="datepickr" data-datepickr-target="date">
+        <%= f.input :end_date, as: :string, input_html: { date: { controller: "datepickr" } } %>
+      </div>
+        <div class="form btn btn-primary rounded-pill">
           <%= f.button :submit %>
         </div>
       <% end %>

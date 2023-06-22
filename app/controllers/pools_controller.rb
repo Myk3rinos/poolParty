@@ -5,7 +5,14 @@ class PoolsController < ApplicationController
   # before_action :set_pool, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pools = Pool.all
+    # @pools = Pool.all
+
+    if params[:query].present?
+      # @pools = Pool.where(address: params[:query])
+      @pools = Pool.where('address ILIKE ?', "%#{params[:query]}%")
+    else
+      @pools = Pool.all
+    end
   end
 
   def new

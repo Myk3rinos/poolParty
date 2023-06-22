@@ -9,12 +9,22 @@
       <% if user_signed_in? %>
         <li><%= link_to 'Reservation', bookings_path, class: 'button button-center' %></li>
         <li><%= link_to 'Mettre en location', new_pool_path, class: 'button button-center' %></li>
+        <li><%= link_to 'Mes locations', owner_bookings_path, class: 'button button-center' %>
+          <div class="notif-location"><%= Booking.all.length %></div>
+        </li>
         <li><%= image_tag("user_profile_image.jpg", class: "circle") %></li>
-        <li><%= button_to(
-          "Deconnexion",
-          destroy_user_session_path,
-          method: :delete
-        ) %></li>
+
+        <div data-controller="menutoggle">
+          <button type="button" class="btn btn-primary" data-action="click->menutoggle#toggle">menu</button>
+          <div data-menutoggle-target="menu" class="d-none menuprofil">
+            <div><%= link_to 'Mes reservations', bookings_path, class: 'button button-center' %></div>
+            <div><%= link_to 'Mes locations', owner_bookings_path, class: 'button button-center' %>
+              <div class="notif-location"><%= Booking.all.length %></div>
+            </div>
+            <div><%= button_to( "Deconnexion", destroy_user_session_path, method: :delete ) %></div>
+          </div>
+        </div>
+
       <% else %>
         <li><%= link_to 'Connexion', new_user_session_path, class: 'button button-center' %></li>
       <% end %>
