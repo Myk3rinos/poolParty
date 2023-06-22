@@ -20,7 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_142908) do
     t.date "start_date"
     t.date "end_date"
     t.integer "price"
-    t.integer "nombre_people"
+    t.integer "nomber_people"
+    t.boolean "validation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pool_id"], name: "index_bookings_on_pool_id"

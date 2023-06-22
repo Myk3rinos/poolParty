@@ -3,7 +3,7 @@
 <h1>Book your favourite pool</h1>
 
 <% @bookings.each do |booking|%>
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3">
   <div class="row no-gutters">
     <div class="col-md-4">
       <%# <img src="..." class="card-img" alt="..."> %>
@@ -14,6 +14,8 @@
         <%# <h5 class="card-title">Card title</h5> %>
         <h5 class="card-title"><strong><%= booking.pool.name %></strong></h5>
         <p class="card-text"> <small class ="text-muted">Description: <%= booking.pool.description %></small></p>
+        <p class="card-text"> <small class ="text-muted">start_date: <%= booking.start_date %></small></p>
+        <p class="card-text"> <small class ="text-muted">end_date: <%= booking.end_date %></small></p>
         <p class="card-text"><small class ="text-muted">Max capacity: <%= booking.pool.max_people %></small></p>
         <p class="card-text"><small class ="text-muted">Price: <%= booking.pool.price %></small></p>
         <p class="card-text"><small class ="text-muted">Address: <%= booking.pool.address %></small></p>
@@ -25,6 +27,3 @@
 </div>
   <%# <br> %>
 <% end %>
-
-
-<%= render "shared/footer" %>

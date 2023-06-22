@@ -11,7 +11,12 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   # resources :poolrental, only: [:index]
-  resources :bookings, only: [:index, :update, :destroy]
+  resources :bookings, only: [:index, :update, :destroy] do
+    member do
+      patch :validate
+      patch :reject
+    end
+  end
   namespace :owner do
     resources :bookings, only: [:index, :update, :edit, :destroy]
   end
