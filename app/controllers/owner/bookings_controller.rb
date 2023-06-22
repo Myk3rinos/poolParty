@@ -2,8 +2,10 @@ class Owner::BookingsController < ApplicationController
 
   before_action :set_bookings, only: [:show, :edit, :update, :destroy]
   def index
-    @bookings = Booking.all
+    # @bookings = Booking.all
     # @bookings.validation = false
+    # @bookings = Booking.where(user_id: current_user)
+    @pools = Pool.where(user_id: current_user)
   end
 
   def show
