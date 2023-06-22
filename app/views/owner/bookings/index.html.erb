@@ -1,16 +1,18 @@
-<% @pools.each do |pool|%>
-
-  <p><%= pool.name %></p>
-  <p><%= pool.url_photo %></p>
-  <%= button_to "delete my pool", pool_path(pool), method: :delete %>
-    <%# <%= button_to "cancel booking", booking_path(booking), method: :delete %> %>
-
-  <% pool.bookings.each do |poolBooking| %>
-    <p><%= pool.name %></p>
-    <p><%= poolBooking.start_date %></p>
-    <p><%= poolBooking.end_date %></p>
-    <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch %>
-    <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch %>
-    <%# <p><%= pool.url_photo %></p> %>
-  <% end %>
-<% end %>
+<div class = "container">
+  <div class = "row">
+    <div class="col-sm">
+      <% @pools.each do |pool|%>
+        <p><%= pool.name %></p>
+        <p><img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>"></p>
+        <%= button_to "delete my pool", pool_path(pool), method: :delete, class: 'form btn btn-primary rounded-pill'%>
+        <% pool.bookings.each do |poolBooking| %>
+        <p><%= pool.name %></p>
+        <p><%= poolBooking.start_date %></p>
+        <p><%= poolBooking.end_date %></p>
+        <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch %>
+        <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
