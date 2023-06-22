@@ -4,24 +4,23 @@
     <img src="<%= @pool.url_photo %>" alt="Image of <%= @pool.name %>">
   </div>
   <div class = "col shadow pr-3">
-    <div data-controller="datepickr" data-datepickr-target="date">
+    <%# <div data-controller="datepickr" data-datepickr-target="date"> %>
       <%= simple_form_for [@pool, @booking] do |f| %>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
-        <%= f.input :nombre_people%>
+        <%= f.input :nomber_people%>
 
         <div data-controller="datepickr" data-datepickr-target="date">
-
-        <%= f.input :start_date, as: :string, input_html: { date: { controller: "datepickr" } } %>
-      </div>
-      <div data-controller="datepickr" data-datepickr-target="date">
-        <%= f.input :end_date, as: :string, input_html: { date: { controller: "datepickr" } } %>
-      </div>
+          <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
+        </div>
+        <div data-controller="datepickr" data-datepickr-target="date">
+          <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
+        </div>
         <div class="form btn btn-primary rounded-pill">
           <%= f.button :submit %>
         </div>
       <% end %>
-    </div>
+    <%# </div> %>
   </div>
   </div>
 </div>

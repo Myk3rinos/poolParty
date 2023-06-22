@@ -1,16 +1,12 @@
-<% @bookings.each do |booking|%>
-
-  <%= button_to "validated booking", validate_booking_path(booking), method: :patch %>
-  <%= button_to "reject booking", reject_booking_path(booking), method: :patch %>
-  <p><%= booking.validation %></p>
-  <p><%= booking.start_date %></p>
-  <p><%= booking.end_date %></p>
-  <img src="<%= booking.pool.url_photo %>" alt="Image de <%= booking.pool.name %>">
-  <br>
-  <p>Booked from: <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></p>
-  <br>
-  <br>
-
+<% @pools.each do |pool|%>
+  <% pool.bookings.each do |poolBooking| %>
+    <p><%= pool.name %></p>
+    <p><%= poolBooking.start_date %></p>
+    <p><%= poolBooking.end_date %></p>
+    <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch %>
+    <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch %>
+    <p><%= pool.url_photo %></p>
+  <% end %>
 <% end %>
  <%# <%= render booking %>
 
