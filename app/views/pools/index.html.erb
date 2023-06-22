@@ -1,13 +1,15 @@
 <%# <%= render "shared/navbar", list: @list, bookmark: @bookmark %>
 <%= render "shared/navbar" %>
 
+
 <div class="search-container">
-<%= form_tag "/index", method: "GET", class: "search-form" do %>
-  <%= label_tag :chercher_par_ville %>
-  <%= text_field_tag :chercher_par_ville, params[:chercher_par_ville] %>
-  <%= label_tag :chercher_par_date %>
-  <%= text_field_tag :chercher_par_date, params[:chercher_par_date] %>
-  <%= submit_tag "Rechercher" %>
+<%= form_with url: root_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Place"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 </div>
 
