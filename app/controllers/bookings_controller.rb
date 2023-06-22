@@ -33,6 +33,22 @@ class BookingsController < ApplicationController
 
   end
 
+  def validate
+    # raise
+    @booking = Booking.find(params[:id])
+    @booking.validation = true
+    @booking.save
+    redirect_to owner_bookings_path
+  end
+
+  def reject
+    # raise
+    @booking = Booking.find(params[:id])
+    @booking.validation = false
+    @booking.save
+    redirect_to owner_bookings_path
+  end
+
   def destroy
     # raise
     # @booking.destroy
