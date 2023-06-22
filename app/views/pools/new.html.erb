@@ -1,19 +1,19 @@
-<div class="container-fluid px-1 py-5 mx-auto">
-  <div class="row d-flex justify-content-center">
-    <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-      <div class="card">
-      <h2>Add a pool</h2>
+<div class="container mt-5 mb-5 d-flex justify-content-center" width = "800">
+  <div class = "card px-1 py-4">
+    <div class = "card-body">
+      <div>
+      <h2 class = "text-center">Add a pool</h2>
         <%= simple_form_for @pool do |f| %>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
 
-        <%= f.input :name%>
+        <%= f.input :name %>
         <%= f.input :max_people %>
         <%= f.input :price %>
         <%= f.input :address %>
         <%= f.input :url_photo %>
         <%= f.input :description %>
-        <div class="form btn btn-primary">
+        <div class="form btn btn-primary rounded-pill">
           <%= f.button :submit %>
         </div>
         <% end %>
