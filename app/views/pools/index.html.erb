@@ -14,30 +14,30 @@
     <%# <%= pool_path(pool), class: 'button button-center' do %>
     <%= link_to pool_path(pool), class: 'article-index' do %>
 
-    <article>
-      <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>">
-      <div class="left-right">
-      <h2><%= pool.name %></h2>
-      <h2><%= pool.price %> €</h2>
-      </div>
-      <div class="left-right">
-    <% if (pool.rating != nil)  %>
-        <div class="stars">
-            <% pool.rating.times do %>
-                <i class="fa-solid fa-star" style="color: #e5c006;"></i>
-            <% end %>
+      <article>
+        <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>">
+        <div class="left-right">
+          <h2><%= pool.name %></h2>
+          <h2><%= pool.price %> € / day</h2>
         </div>
-    <% end %>
-    <div class="users">
-    <p><%= pool.max_people %><i class="fa-solid fa-user user-icon"></i></p>
-</div>
+        <div class="left-right">
+          <div class="users">
+            <p><%= pool.max_people %><i class="fa-solid fa-user user-icon"></i></p>
+          </div>
+          <% if (pool.rating != nil)  %>
+              <div class="stars">
+                  <% pool.rating.times do %>
+                      <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                  <% end %>
+              </div>
+          <% end %>
+        </div>
 
-</div>
-        <p>
-          <i class="fa-solid fa-city"></i>
-          <span class="separator"></span>
-          <%= pool.address %>
-        </p>
+      <p>
+        <i class="fa-solid fa-city"></i>
+        <span class="separator"></span>
+        <%= pool.address %>
+      </p>
       </div>
       <p><%= pool.description %></p>
     </article>

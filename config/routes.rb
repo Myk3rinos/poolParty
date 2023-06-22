@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   namespace :owner do
     resources :bookings, only: [:index, :update, :edit, :destroy]
   end
+  resources :contact, only: :index
 end

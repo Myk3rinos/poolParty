@@ -3,7 +3,8 @@
     <%= link_to image_tag("logo.png", class:"logo"), root_path %>
     <ul>
       <li><%= link_to 'Home', root_path %></li>
-      <li><a href="#">Contact us</a></li>
+      <li><%= link_to 'Contact us', contact_index_path, class: 'btn-menu' %></li>
+
       <li><%= link_to 'Rent your Pool', new_pool_path, class: 'button button-center' %></li>
       <% if user_signed_in? %>
         <li class="avatar-container">
@@ -11,8 +12,8 @@
             <%= image_tag("user_profile_image.jpg", class: "image-profil", data: { action: "click->menutoggle#toggle" }) %>
             <div class="notif-location"><%= Booking.all.length %></div>
             <div data-menutoggle-target="menu" class="d-none menuprofil">
-              <div><%= link_to 'My reservations', bookings_path, class: 'btn-menu' %></div>
-              <div><%= link_to 'My rentals', owner_bookings_path, class: 'btn-menu' %></div>
+              <%= link_to 'My reservations', bookings_path, class: 'btn-menu' %>
+              <%= link_to 'My rentals', owner_bookings_path, class: 'btn-menu' %>
               <%# <div class="Logout"> %>
 
               <%= button_to('Logout', destroy_user_session_path, method: :delete, class: 'btn-menu logout') %>
