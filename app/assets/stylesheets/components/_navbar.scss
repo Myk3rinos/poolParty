@@ -1,42 +1,76 @@
+$navbar-height: 60px;
+
 nav {
+  // font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: $navbar-height;
+  background-color: $blue;
+  color: white;
+  text-align: center;
 
   .logo {
-    width: 200px;
+    width: 180px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+  }
+
+  .logo:hover {
+    scale: 1.02;
+    transform: rotate(-3deg);
+    transition: color 0.2s ease-in-out;
   }
 
   ul {
     display: flex;
     align-items: center;
     list-style-type: none;
-    padding: 0;
+    // padding: 0;
 
     li {
       margin: 0 15px;
       margin-left: 10px;
-      position: relative;
+      // position: relative;
 
       a {
         color: white;
         text-decoration: none;
-        transition: color 0.2s ease-in-out;
+        transition: color 0.1s ease-in-out;
         padding: 5px;
+        border-radius: 10px;
 
         &:hover {
-          color: #0058A3;
+          color: $blue;
           background-color: white;
-          padding: 5px;
+          // padding: 5px;
+          // border-radius: 10px;
         }
       }
     }
+    .image-profil {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      border: 2px solid $blue;
 
+    }
+    .image-profil:hover {
+      border: 2px solid white;
+    }
     .menuprofil {
       position: absolute;
-      background-color: #0058A3;
-      right: 0px;
-      top: 80px;
+      background-color: $blue;
+      right: -15px;
+      top: $navbar-height;
+      width: 150px;
+    }
+
+    .menuprofil a:hover {
+      background-color: #fbfbfb;
+      color: #0058A3;
     }
   }
 
@@ -44,24 +78,13 @@ nav {
     font-size: 30px;
   }
 }
-.circle {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+
+.blank {
+  width: 100%;
+  height: 30px;
+  background-color: white;
 }
 
-.menuprofil a {
-  display: block;
-  margin-bottom: 5px;
-  text-decoration: none;
-  color: #fbfbfb;
-  padding: 5px;
-}
-
-.menuprofil a:hover {
-  background-color: #fbfbfb;
-  color: #0058A3;
-}
 
 .avatar-container {
   position: relative;
@@ -69,8 +92,8 @@ nav {
 
 .notif-location {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -4px;
+  right: -4px;
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -79,12 +102,17 @@ nav {
 }
 
 .logout {
-  background-color: #0058A3;
-  color: rgb(171, 1, 1);
+  background-color: #e40d1e;
+  // background-color: #0058A3;
+  color: rgb(255, 255, 255);
   text-decoration: none;
+  width: 150px;
+  border: none;
 }
-
-.btn-danger a:hover {
-  background-color: #fbfbfb;
-  color: #0058A3;
+.btn-menu {
+  padding: 5px 0 5px 0;
 }
+// .btn-danger a:hover {
+//   background-color: #fbfbfb;
+//   color: #0058A3;
+// }

@@ -1,4 +1,4 @@
-<header>
+<%# <header> %>
   <nav>
     <%= link_to image_tag("logo.png", class:"logo"), root_path %>
     <ul>
@@ -8,12 +8,15 @@
       <% if user_signed_in? %>
         <li class="avatar-container">
           <div data-controller="menutoggle">
-            <%= image_tag("user_profile_image.jpg", class: "circle", data: { action: "click->menutoggle#toggle" }) %>
+            <%= image_tag("user_profile_image.jpg", class: "image-profil", data: { action: "click->menutoggle#toggle" }) %>
             <div class="notif-location"><%= Booking.all.length %></div>
             <div data-menutoggle-target="menu" class="d-none menuprofil">
-              <div><%= link_to 'My reservations', bookings_path, class: '' %></div>
-              <div><%= link_to 'My rentals', owner_bookings_path, class: '' %></div>
-              <%= button_to('Logout', destroy_user_session_path, method: :delete, class: 'btn-danger') %>
+              <div><%= link_to 'My reservations', bookings_path, class: 'btn-menu' %></div>
+              <div><%= link_to 'My rentals', owner_bookings_path, class: 'btn-menu' %></div>
+              <%# <div class="Logout"> %>
+
+              <%= button_to('Logout', destroy_user_session_path, method: :delete, class: 'btn-menu logout') %>
+              <%# </div> %>
 
             </div>
           </div>
@@ -23,4 +26,5 @@
       <% end %>
     </ul>
   </nav>
-</header>
+  <div class="blank"></div>
+<%# </header> %>

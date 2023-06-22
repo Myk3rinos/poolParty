@@ -9,8 +9,8 @@ export default class extends Controller {
   }
 
   toggle() {
-    // console.log("hello2")
     console.log(this.menuTarget);
     this.menuTarget.classList.toggle('d-none')
+    // this.menuTarget.style.heigth = "0px"
   }
 }
