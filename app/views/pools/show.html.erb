@@ -12,6 +12,7 @@
         <%= f.input :nombre_people%>
 
         <div data-controller="datepickr" data-datepickr-target="date">
+
         <%= f.input :start_date, as: :string, input_html: { date: { controller: "datepickr" } } %>
       </div>
       <div data-controller="datepickr" data-datepickr-target="date">

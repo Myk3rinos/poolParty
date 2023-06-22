@@ -33,14 +33,21 @@ class BookingsController < ApplicationController
 
   end
 
+  def validate
+    @booking = Booking.find(params[:id])
+    @booking.validation = true
+    @booking.save
+    redirect_to owner_bookings_path
+  end
+
+  def reject
+    Booking.find(params[:id]).destroy
+    redirect_to owner_bookings_path
+  end
+
   def destroy
-    # raise
-    # @booking.destroy
     Booking.find(params[:id]).destroy
     redirect_to bookings_path
-    # redirect_to bookings
-
-
     # respond_to do |format|
     #   format.html { redirect_to booking_url, notice: "Booking was successfully destroyed." }
     #   format.json { head :no_content }
@@ -54,6 +61,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:first_name, :last_name, :email, :identity, :phone_number)
+    # params.require(:booking).permit(:first_name, :last_name, :email, :identity, :phone_number)
+    params.require(:booking).permit(:start_date, :end_date, :nomber_people)
   end
 end
