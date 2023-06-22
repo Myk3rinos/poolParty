@@ -6,7 +6,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.date :start_date
       t.date :end_date
       t.integer :price
-      t.integer :nombre_people
+      t.integer :nomber_people
       t.boolean :validation
 
       t.timestamps

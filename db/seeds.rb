@@ -26,10 +26,10 @@ pool5 = Pool.create(user_id: jim.id, name: 'olympique pool', description: "olymp
 pool6 = Pool.create(user_id: john.id, name: 'best pool', description: "nice pool", max_people: 2, price: 10, rating: 5, address: "Berlin", url_photo: "https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1096&q=80")
 
 puts "----------- create Booking -----------"
-Booking.create(user_id: john.id, pool_id: pool1.id, nombre_people: 2, price: 10, validation: false)
-Booking.create(user_id: joe.id, pool_id: pool2.id, nombre_people: 1, price: 30, validation: false)
-Booking.create(user_id: jim.id, pool_id: pool3.id, nombre_people: 3, price: 20, validation: true)
-Booking.create(user_id: jack.id, pool_id: pool4.id, nombre_people: 4, price: 40, validation: false)
+Booking.create(user_id: john.id, pool_id: pool1.id, nomber_people: 2, price: 10, validation: false)
+Booking.create(user_id: joe.id, pool_id: pool2.id, nomber_people: 1, price: 30, validation: false)
+Booking.create(user_id: jim.id, pool_id: pool3.id, nomber_people: 3, price: 20, validation: true)
+Booking.create(user_id: jack.id, pool_id: pool4.id, nomber_people: 4, price: 40, validation: false)
 
 puts ""
 puts "----------- creation seed OK -----------"
