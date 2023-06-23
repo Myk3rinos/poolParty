@@ -1,38 +1,31 @@
 $navbar-height: 60px;
 
 nav {
-  // font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: $navbar-height;
   background-color: $blue;
   color: white;
   text-align: center;
 
   .logo {
     width: 180px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-  }
 
-  .logo:hover {
-    scale: 1.02;
-    transform: rotate(-3deg);
-    transition: color 0.2s ease-in-out;
+    &:hover {
+      scale: 1.02;
+      transform: rotate(-3deg);
+      transition: color 0.2s ease-in-out;
+    }
   }
 
   ul {
     display: flex;
     align-items: center;
     list-style-type: none;
-    // padding: 0;
 
     li {
       margin: 0 15px;
       margin-left: 10px;
-      // position: relative;
 
       a {
         color: white;
@@ -44,11 +37,11 @@ nav {
         &:hover {
           color: $blue;
           background-color: white;
-          // padding: 5px;
-          // border-radius: 10px;
+          padding: 5px;
         }
       }
     }
+
     .image-profil {
       border-radius: 50%;
       width: 50px;
@@ -56,21 +49,40 @@ nav {
       cursor: pointer;
       border: 2px solid $blue;
 
+      &:hover {
+        border: 2px solid white;
+      }
     }
-    .image-profil:hover {
-      border: 2px solid white;
-    }
+
     .menuprofil {
       position: absolute;
       background-color: $blue;
       right: -15px;
       top: $navbar-height;
       width: 150px;
-    }
 
-    .menuprofil a:hover {
-      background-color: #fbfbfb;
-      color: #0058A3;
+      .marginpx {
+        margin-bottom: 5px;
+
+        .btn-menu {
+          display: block;
+          padding: 5px 0 5px 0;
+          color: white;
+          background-color: #0f61dc;
+          text-decoration: none;
+          border-radius: 0;
+
+          &:hover {
+            color: #0f61dc;
+            background-color: white;
+          }
+        }
+      }
+
+      a:hover {
+        background-color: #fbfbfb;
+        color: #0058A3;
+      }
     }
   }
 
@@ -78,13 +90,6 @@ nav {
     font-size: 30px;
   }
 }
-
-.blank {
-  width: 100%;
-  height: 30px;
-  background-color: white;
-}
-
 
 .avatar-container {
   position: relative;
@@ -103,16 +108,8 @@ nav {
 
 .logout {
   background-color: #e40d1e;
-  // background-color: #0058A3;
   color: rgb(255, 255, 255);
   text-decoration: none;
   width: 150px;
   border: none;
 }
-.btn-menu {
-  padding: 5px 0 5px 0;
-}
-// .btn-danger a:hover {
-//   background-color: #fbfbfb;
-//   color: #0058A3;
-// }

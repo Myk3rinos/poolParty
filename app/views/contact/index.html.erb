@@ -2,18 +2,15 @@
   <div class = "card px-1 py-4">
     <div class = "card-body">
       <div>
-      <h2 class = "text-center">Add a pool</h2>
+      <h2 class = "text-center">Contact us</h2>
         <%= simple_form_for @pool do |f| %>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
 
         <%= f.input :name %>
-        <%= f.input :max_people %>
-        <%= f.input :price %>
         <%= f.input :address %>
-        <%= f.input :url_photo %>
         <%= f.input :description %>
-        <div class="form btn btn-primary rounded-pill">
+        <div class=" btn btn-primary rounded-pill white">
           <%= f.button :submit %>
         </div>
         <% end %>

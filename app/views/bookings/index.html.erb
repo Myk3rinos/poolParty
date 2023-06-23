@@ -1,24 +1,41 @@
 <div class="container pt-3 ">
-<h1 class = "text-center">Your favourite pool</h1>
+<h1 class = "text-center">Your bookings</h1>
 
 <% @bookings.each do |booking|%>
 <div class="container p-3 m-5 bg-white shadow p-3 m-5 bg-white ">
   <div class="row">
-    <div class="col">
-      <%# <img src="..." class="card-img" alt="..."> %>
-      <img src="<%= booking.pool.url_photo %>" class="card-img pt-2" alt="Image de <%= booking.pool.name %>">
-    </div>
     <div class="col-md-8">
+      <%# <img src="..." class="card-img" alt="..."> %>
+      <img src="<%= booking.pool.url_photo %>" class="card-img pt-2" style="max-height: 400px; object-fit: cover;" alt="Image de <%= booking.pool.name %>">
+    </div>
+    <div class="col-md-4">
       <div class="card-body">
         <%# <h5 class="card-title">Card title</h5> %>
         <h5 class="card-title"><strong><%= booking.pool.name %></strong></h5>
-        <p class="card-text"> <small class ="text-muted">Description: <%= booking.pool.description %></small></p>
-        <p class="card-text"> <small class ="text-muted">start_date: <%= booking.start_date %></small></p>
-        <p class="card-text"> <small class ="text-muted">end_date: <%= booking.end_date %></small></p>
-        <p class="card-text"><small class ="text-muted">Max capacity: <%= booking.pool.max_people %></small></p>
-        <p class="card-text"><small class ="text-muted">Price: <%= booking.pool.price %></small></p>
-        <p class="card-text"><small class ="text-muted">Address: <%= booking.pool.address %></small></p>
-        <%# <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> %>
+        <div class="card-text" style="display: flex; margin-top: 40px; margin-bottom: 30px;">
+          <small class ="text-muted" style="width: 120px;">Price:</small>
+          <small><%= booking.pool.price %></small>
+        </div>
+        <div class="card-text" style="display: flex; margin-bottom: 30px;">
+          <small class ="text-muted" style="width: 120px;">Start date:</small>
+          <small><%= booking.start_date %></small>
+        </div>
+        <div class="card-text" style="display: flex; margin-bottom: 30px;">
+          <small class ="text-muted" style="width: 120px;">End date:</small>
+          <small><%= booking.end_date %></small>
+        </div>
+        <div class="card-text" style="display: flex; margin-bottom: 30px;">
+          <small class ="text-muted" style="width: 120px;">Maximum capacity:</small>
+          <small><%= booking.pool.max_people %></small>
+        </div>
+        <div class="card-text" style="display: flex; margin-bottom: 30px;">
+          <small class ="text-muted" style="width: 120px;">Address:</small>
+          <small><%= booking.pool.address %></small>
+        </div>
+        <div class="card-text" style="display: flex; margin-bottom: 30px;">
+          <small class ="text-muted" style="width: 120px;">Description:</small>
+          <small><%= booking.pool.description %></small>
+        </div>
       </div>
     </div>
     <div class = "pt-2 ">
@@ -26,6 +43,5 @@
     </div>
   </div>
 </div>
-  <%# <br> %>
 <% end %>
 </div>
