@@ -2,8 +2,9 @@
 <div class = "row">
   <div class = "col image-container">
     <img src="<%= @pool.url_photo %>" alt="Image of <%= @pool.name %>">
+    <p class="mt-3"><%= @pool.description %></p>
   </div>
-  <div class = "col shadow pr-3">
+  <div class = "col">
     <%# <div data-controller="datepickr" data-datepickr-target="date"> %>
       <%= simple_form_for [@pool, @booking] do |f| %>
         <h2><%= @pool.price %> € / day</h2>
