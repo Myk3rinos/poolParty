@@ -13,12 +13,12 @@
       <div class ="col image-container">
         <% pool.bookings.each do |poolBooking| %>
           <p><%= pool.name %></p>
-          <p><%= poolBooking.start_date %></p>
-          <p><%= poolBooking.end_date %></p>
+          <p>from <%= poolBooking.start_date %> to <%= poolBooking.end_date %></p>
           <% if (poolBooking.end_date != nil && poolBooking.start_date != nil) %>
-            <p><%= poolBooking.end_date - poolBooking.start_date %>days</p>
-            <% totaldate = poolBooking.end_date - poolBooking.start_date %>
-            <p>total: <%= pool.price.to_i * totaldate.to_i %> € </p>
+          <% totaldate = poolBooking.end_date - poolBooking.start_date %>
+            <p>total days:<%= totaldate %></p>
+
+            <p>total price: <%= pool.price.to_i * totaldate.to_i %> € </p>
           <% end %>
           <% if poolBooking.validation %>
             <small class="text-success"> reservation accepted </small>

@@ -38,10 +38,12 @@
           <small><%= booking.pool.description %></small>
         </div>
         <div class="card-text" style="display: flex; margin-bottom: 30px;">
-          <small class="text-success"><% if booking.validation %>
-            reservation accepted
+          <% if booking.validation %>
+            <small class="text-success">reservation accepted</small>
+          <% else %>
+            <small >waiting owner validation</small>
           <% end %>
-          </small>
+
         </div>
 
       </div>
