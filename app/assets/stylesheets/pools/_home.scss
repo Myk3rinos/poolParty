@@ -70,7 +70,12 @@
 }
 
 .img-rental{
-  object-fit: center;
-  height:350px;
+  object-fit: cover;
+  height:400px;
   width: 100%;
+}
+.container-rental{
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
 }
