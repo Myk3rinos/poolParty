@@ -1,5 +1,5 @@
 class ContactController < ApplicationController
   def index
-    @pool = Pool.find(1)
+    @pool = Pool.new
   end
 end
