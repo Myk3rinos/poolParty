@@ -6,6 +6,7 @@
   <div class = "col shadow pr-3">
     <%# <div data-controller="datepickr" data-datepickr-target="date"> %>
       <%= simple_form_for [@pool, @booking] do |f| %>
+        <h2><%= @pool.price %> € / day</h2>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
         <%= f.input :nomber_people%>

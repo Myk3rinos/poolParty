@@ -97,13 +97,17 @@ nav {
 
 .notif-location {
   position: absolute;
-  top: -4px;
-  right: -4px;
+  width: 20px;
+  height: 20px;
+  top: -5px;
+  right: -5px;
   background-color: red;
   color: white;
   border-radius: 50%;
   padding: 0.3em 0.6em;
   font-size: 0.8em;
+  text-align: center;
+  vertical-align:middle;
 }
 
 .logout {
