@@ -7,6 +7,7 @@
   <div class = "col">
     <%# <div data-controller="datepickr" data-datepickr-target="date"> %>
       <%= simple_form_for [@pool, @booking] do |f| %>
+        <h3><%= @pool.name.capitalize %></h3>
         <h2><%= @pool.price %> € / day</h2>
         <div class="left-right">
           <div class="users">
