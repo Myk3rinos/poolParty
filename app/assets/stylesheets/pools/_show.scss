@@ -6,11 +6,6 @@
   font-family: Arial, sans-serif;
 }
 
-// .article {
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-
   .image-container {
     // flex: 2;
 
@@ -22,38 +17,7 @@
     }
   }
 
-  // .details-container {
-  //   flex: 1;
-  //   margin-left: 2em;
-
-    // h2 {
-    //   font-size: 2em;
-    //   color: #333;
-    // }
-
-    // p {
-    //   margin: 0.5em 0;
-    //   color: #666;
-    //   font-size: 1.2em;
-    // }
-  // }
-// }
-
-// body {
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
-// }
 
 .content {
   flex: 1 0 auto;
 }
-
-// footer {
-//   flex-shrink: 0;
-//   background-color: #0058A3;
-//   color: white;
-//   text-align: center;
-//   padding: 10px;
-//   width: 100%;
-// }
