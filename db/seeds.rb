@@ -7,9 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "----------- delete User -----------"
-User.destroy_all
-Pool.destroy_all
+
 Booking.destroy_all
+Pool.destroy_all
+User.destroy_all
 
 puts "----------- create User -----------"
 john = User.create(first_name: 'john', last_name: "pool", email: "john.pool@gmail.fr", password: "rerere", phone_number: "343 123 4321")
