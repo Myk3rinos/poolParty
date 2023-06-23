@@ -37,6 +37,12 @@
           <small class ="text-muted" style="width: 120px;">Description:</small>
           <small><%= booking.pool.description %></small>
         </div>
+        <div class="card-text" style="display: flex; margin-bottom: 30px;">
+          <small class="text-success"><% if booking.validation %>
+            reservation accepted
+          <% end %>
+          </small>
+        </div>
 
       </div>
       <div class = "pt-2">
