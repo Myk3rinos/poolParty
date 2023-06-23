@@ -48,7 +48,7 @@
 
       </div>
       <div class = "pt-2">
-        <%= button_to "cancel booking", booking_path(booking), method: :delete, class: 'form btn btn-primary rounded-pill btn-danger' %>
+        <%= button_to "cancel booking", booking_path(booking), method: :delete, class: 'form btn rounded-pill btn-light text-danger', data: {turbo_confirm: 'are you sure ?'}  %>
     </div>
     </div>
   </div>

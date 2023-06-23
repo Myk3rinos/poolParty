@@ -5,7 +5,7 @@
       <div class ="col image-container shadow p-2 m-5 bg-white ">
           <div class="d-flex align-items-center">
             <%= pool.name %>
-            <%= button_to pool_path(pool), method: :delete, class: 'form btn btn-light rounded-pill btn-danger' do %>
+            <%= button_to pool_path(pool), method: :delete, class: 'form btn btn-light rounded-pill btn-danger', data: {turbo_confirm: 'are you sure ?'} do %>
               <i class="fa-solid fa-trash text-primary"></i>
             <% end %>
           </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="d-flex">
                   <%= button_to "validate", validate_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill' %>
-                  <%= button_to "reject", reject_booking_path(poolBooking), method: :patch, class: 'form btn rounded-pill btn-light' %>
+                  <%= button_to "reject", reject_booking_path(poolBooking), method: :patch, class: 'form btn rounded-pill btn-light', data: {turbo_confirm: 'are you sure ?'} %>
                 </div>
               </div>
             <% end %>
