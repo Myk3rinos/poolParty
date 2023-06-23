@@ -12,8 +12,11 @@ nav {
 
   .logo {
     width: 180px;
-    margin-right: 20px;
-    margin-top: 45px;
+    // margin-right: 16px;
+    // margin-top: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
 
     &:hover {
       scale: 1.02;
