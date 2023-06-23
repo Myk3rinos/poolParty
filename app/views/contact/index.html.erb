@@ -1,23 +1,20 @@
-<div class="container mt-5 mb-5 d-flex justify-content-center" width = "800">
-  <div class = "card px-1 py-4">
-    <div class = "card-body">
-      <div>
-      <h2 class = "text-center">Add a pool</h2>
-        <%= simple_form_for @pool do |f| %>
-        <%= f.error_notification %>
-        <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
-
-        <%= f.input :name %>
-        <%= f.input :max_people %>
-        <%= f.input :price %>
-        <%= f.input :address %>
-        <%= f.input :url_photo %>
-        <%= f.input :description %>
-        <div class="form btn btn-primary rounded-pill">
-          <%= f.button :submit %>
-        </div>
-        <% end %>
-      </div>
-    </div>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-</div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">receve notification</label>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Your question</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

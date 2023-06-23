@@ -14,8 +14,8 @@
         <p><%= pool.name %></p>
         <p><%= poolBooking.start_date %></p>
         <p><%= poolBooking.end_date %></p>
-        <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch %>
-        <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch %>
+        <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-success' %>
+        <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-danger' %>
         <% end %>
       <% end %>
     </div>
