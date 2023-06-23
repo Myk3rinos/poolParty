@@ -12,6 +12,7 @@
       <div class="card-body">
         <%# <h5 class="card-title">Card title</h5> %>
         <h5 class="card-title"><strong><%= booking.pool.name %></strong></h5>
+
         <div class="card-text" style="display: flex; margin-top: 40px; margin-bottom: 30px;">
           <small class ="text-muted" style="width: 120px;">Price:</small>
           <small><%= booking.pool.price %></small>
@@ -36,10 +37,11 @@
           <small class ="text-muted" style="width: 120px;">Description:</small>
           <small><%= booking.pool.description %></small>
         </div>
+
       </div>
+      <div class = "pt-2">
+        <%= button_to "cancel booking", booking_path(booking), method: :delete, class: 'form btn btn-primary rounded-pill' %>
     </div>
-    <div class = "pt-2 ">
-    <%= button_to "cancel booking", booking_path(booking), method: :delete, class: 'form btn btn-primary rounded-pill' %>
     </div>
   </div>
 </div>

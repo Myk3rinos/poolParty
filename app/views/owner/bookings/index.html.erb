@@ -1,16 +1,26 @@
-<div class = "container">
+<div class = "container-rental">
   <div class = "row">
     <div class="col">
       <% @pools.each do |pool|%>
+
+        <div class ="col image-container shadow p-3 m-5 bg-white ">
         <p><%= pool.name %></p>
-        <p><img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>"></p>
-        <%= button_to "delete my pool", pool_path(pool), method: :delete, class: 'form btn btn-primary rounded-pill'%>
+        <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>"  class = "img-rental">
+          <div class = "pt-2">
+            <%= button_to "delete my pool", pool_path(pool), method: :delete, class: 'form btn btn-primary rounded-pill'%>
+          </div>
+        </div>
         <% pool.bookings.each do |poolBooking| %>
-        <p><%= pool.name %></p>
-        <p><%= poolBooking.start_date %></p>
-        <p><%= poolBooking.end_date %></p>
-        <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch %>
-        <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch %>
+          <p><%= pool.name %></p>
+          <p><%= poolBooking.start_date %></p>
+          <p><%= poolBooking.end_date %></p>
+          <% if (poolBooking.end_date != nil && poolBooking.start_date != nil) %>
+            <p><%= poolBooking.end_date - poolBooking.start_date %>days</p>
+            <% totaldate = poolBooking.end_date - poolBooking.start_date %>
+            <p>total: <%= pool.price.to_i * totaldate.to_i %> € </p>
+          <% end %>
+        <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-success' %>
+        <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-danger' %>
         <% end %>
       <% end %>
     </div>
