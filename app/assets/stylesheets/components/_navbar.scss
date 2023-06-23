@@ -1,15 +1,19 @@
-$navbar-height: 60px;
+$navbar-height: 75px;
 
 nav {
+  height: $navbar-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $blue;
   color: white;
   text-align: center;
+  padding: 10px;
 
   .logo {
     width: 180px;
+    margin-right: 20px;
+    margin-top: 45px;
 
     &:hover {
       scale: 1.02;
@@ -116,4 +120,10 @@ nav {
   text-decoration: none;
   width: 150px;
   border: none;
+}
+
+.blank {
+  width: 100%;
+  height: 30px;
+  background-color: #F4F4F4;
 }
