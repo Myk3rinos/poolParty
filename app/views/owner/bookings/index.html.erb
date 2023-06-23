@@ -1,15 +1,17 @@
-<div class = "container-rental">
+<div class = "container my-container">
   <div class = "row">
-    <div class="col">
-      <% @pools.each do |pool|%>
 
-        <div class ="col image-container shadow p-3 m-5 bg-white ">
+      <% @pools.each do |pool|%>
+      <div class="col">
+      <div class ="col image-container shadow p-3 m-5 bg-white ">
         <p><%= pool.name %></p>
         <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>"  class = "img-rental">
           <div class = "pt-2">
             <%= button_to "delete my pool", pool_path(pool), method: :delete, class: 'form btn btn-primary rounded-pill'%>
           </div>
         </div>
+      </div>
+      <div class ="col image-container">
         <% pool.bookings.each do |poolBooking| %>
           <p><%= pool.name %></p>
           <p><%= poolBooking.start_date %></p>
@@ -23,6 +25,6 @@
         <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-danger' %>
         <% end %>
       <% end %>
-    </div>
+</div>
   </div>
 </div>
