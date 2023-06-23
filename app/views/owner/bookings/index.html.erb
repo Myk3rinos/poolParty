@@ -1,13 +1,12 @@
 <div class = "container my-container">
   <div class = "row">
-
-      <% @pools.each do |pool|%>
+    <% @pools.each do |pool|%>
       <div class="col">
       <div class ="col image-container shadow p-3 m-5 bg-white ">
         <p><%= pool.name %></p>
         <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>"  class = "img-rental">
           <div class = "pt-2">
-            <%= button_to "delete my pool", pool_path(pool), method: :delete, class: 'form btn btn-primary rounded-pill'%>
+            <%= button_to "delete my pool", pool_path(pool), method: :delete, class: 'form btn btn-primary rounded-pill btn-danger'%>
           </div>
         </div>
       </div>
@@ -21,10 +20,17 @@
             <% totaldate = poolBooking.end_date - poolBooking.start_date %>
             <p>total: <%= pool.price.to_i * totaldate.to_i %> € </p>
           <% end %>
-        <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-success' %>
-        <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-danger' %>
+          <% if poolBooking.validation %>
+            <small class="text-success"> reservation accepted </small>
+          <% else %>
+            <small> waiting for validation </small>
+          <% end %>
+          <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-success' %>
+          <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-danger' %>
         <% end %>
-      <% end %>
-</div>
+    <% end %>
+    </div>
   </div>
 </div>
+
+<%# indentation incomprehensible %>
