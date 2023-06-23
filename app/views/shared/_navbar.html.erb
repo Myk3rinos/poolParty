@@ -12,13 +12,13 @@
             <%= image_tag("user_profile_image.jpg", class: "image-profil", data: { action: "click->menutoggle#toggle" }) %>
             <div class="notif-location"><%= Booking.all.length %></div>
             <div data-menutoggle-target="menu" class="d-none menuprofil">
+            <div class="marginpx">
               <%= link_to 'My reservations', bookings_path, class: 'btn-menu' %>
+              </div>
+              <div class="marginpx">
               <%= link_to 'My rentals', owner_bookings_path, class: 'btn-menu' %>
-              <%# <div class="Logout"> %>
-
+              </div>
               <%= button_to('Logout', destroy_user_session_path, method: :delete, class: 'btn-menu logout') %>
-              <%# </div> %>
-
             </div>
           </div>
         </li>
@@ -27,5 +27,4 @@
       <% end %>
     </ul>
   </nav>
-  <div class="blank"></div>
 <%# </header> %>
