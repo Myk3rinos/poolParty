@@ -3,17 +3,15 @@
     <div class = "row">
 
         <div class ="col image-container shadow p-2 m-5 bg-white ">
-          <p><%= pool.name %></p>
-          <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>"  class = "img-rental">
-          <div class = "pt-2">
+          <div class="d-flex align-items-center">
+            <%= pool.name %>
             <%= button_to pool_path(pool), method: :delete, class: 'form btn btn-light rounded-pill btn-danger' do %>
               <i class="fa-solid fa-trash text-primary"></i>
             <% end %>
           </div>
-        </div>
+          <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>"  class = "img-rental">
 
-        <% if pool.bookings.any? %>
-          <div class ="image-container shadow p-2 m-5 bg-white">
+          <% if pool.bookings.any? %>
             <% pool.bookings.each do |poolBooking| %>
               <div>
                 <p><%= pool.name %></p>
@@ -34,9 +32,9 @@
                 <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch, class: 'form btn rounded-pill btn-light' %>
               </div>
             <% end %>
-          </div>
-        <% end %>
-
+        </div>
+      <% end %>
+    </div>
     </div>
   <% end %>
 </div>
