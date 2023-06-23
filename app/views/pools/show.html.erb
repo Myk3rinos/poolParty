@@ -7,6 +7,18 @@
     <%# <div data-controller="datepickr" data-datepickr-target="date"> %>
       <%= simple_form_for [@pool, @booking] do |f| %>
         <h2><%= @pool.price %> € / day</h2>
+        <div class="left-right">
+          <div class="users">
+            <p><%= @pool.max_people %><i class="fa-solid fa-user user-icon"></i></p>
+          </div>
+          <% if (@pool.rating != nil)  %>
+              <div class="stars">
+                  <% @pool.rating.times do %>
+                      <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                  <% end %>
+              </div>
+          <% end %>
+        </div>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
         <%= f.input :nomber_people%>
