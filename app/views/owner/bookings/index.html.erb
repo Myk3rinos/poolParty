@@ -2,31 +2,37 @@
   <% @pools.each do |pool|%>
     <div class = "row">
 
-        <div class ="col image-container shadow p-3 m-5 bg-white ">
+        <div class ="col image-container shadow p-2 m-5 bg-white ">
           <p><%= pool.name %></p>
           <img src="<%= pool.url_photo %>" alt="Image de <%= pool.name %>"  class = "img-rental">
           <div class = "pt-2">
-            <%= button_to "delete my pool", pool_path(pool), method: :delete, class: 'form btn btn-primary rounded-pill btn-danger'%>
+            <%= button_to pool_path(pool), method: :delete, class: 'form btn btn-light rounded-pill btn-danger' do %>
+              <i class="fa-solid fa-trash text-primary"></i>
+            <% end %>
           </div>
         </div>
 
         <% if pool.bookings.any? %>
-          <div class ="image-container shadow p-3 m-5 bg-white">
+          <div class ="image-container shadow p-2 m-5 bg-white">
             <% pool.bookings.each do |poolBooking| %>
-              <p><%= pool.name %></p>
-              <p>from <%= poolBooking.start_date %> to <%= poolBooking.end_date %></p>
-              <% if (poolBooking.end_date != nil && poolBooking.start_date != nil) %>
-              <% totaldate = poolBooking.end_date - poolBooking.start_date %>
-              <p>total days:<%= totaldate %></p>
-              <p>total price: <%= pool.price.to_i * totaldate.to_i %> € </p>
-              <% end %>
-              <% if poolBooking.validation %>
-                <small class="text-success"> reservation accepted </small>
-              <% else %>
-                <small> waiting for validation </small>
-              <% end %>
-              <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-success' %>
-              <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill btn-danger' %>
+              <div>
+                <p><%= pool.name %></p>
+                <p>from <%= poolBooking.start_date %> to <%= poolBooking.end_date %></p>
+                <% if (poolBooking.end_date != nil && poolBooking.start_date != nil) %>
+                <% totaldate = poolBooking.end_date - poolBooking.start_date %>
+                <p>total days:<%= totaldate %></p>
+                <p>total price: <%= pool.price.to_i * totaldate.to_i %> € </p>
+                <% end %>
+                <% if poolBooking.validation %>
+                  <small class="text-success"> reservation accepted </small>
+                <% else %>
+                  <small> waiting for validation </small>
+                <% end %>
+              </div>
+              <div class="d-flex">
+                <%= button_to "validated booking", validate_booking_path(poolBooking), method: :patch, class: 'form btn btn-primary rounded-pill' %>
+                <%= button_to "reject booking", reject_booking_path(poolBooking), method: :patch, class: 'form btn rounded-pill btn-light' %>
+              </div>
             <% end %>
           </div>
         <% end %>
